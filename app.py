@@ -9,18 +9,26 @@ DESCRIPTION
 This app runs in a docker container and automatically updates Cloudflare DDNS
 whenever it detects that LAN router's public IP has changed.
 
-Don't forget to change the variables below to match your account details.
+Don't forget to create a '.env' file in this directory. Check out the README for an example.
 """
+import os
 import json, time, requests
 import urllib.request
+from dotenv import load_dotenv
 
-# Your Cloudflare account information is requred below for this program to work.
-# Your API key only needs the Edit DNS template for this to work. 
-# Replace these with your actual values
-api_key = 'your_api_key'
-email = 'your_cloudflare_email'  # Only needed if using Global API Key
-zone_id = 'your_zoneid'  # Find this in your Cloudflare dashboard
-domain = 'your_domain'  # Your domain name
+load_dotenv()
+
+api_key = os.getenv('API_KEY')
+email = os.getenv('EMAIL')  # Only needed if using Global API Key
+zone_id = os.getenv('ZONE_ID') # Find this in your Cloudflare dashboard
+domain = os.getenv('DOMAIN')  # Your domain name
+
+print(api_key)
+print(email)
+print(zone_id)
+print(domain)
+
+
 
 RUNNING = True
 
