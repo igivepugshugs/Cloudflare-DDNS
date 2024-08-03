@@ -1,5 +1,5 @@
 # CloudFlare DDNS
-Uses the Cloudflare API to automatically update a DNS record for a given domain. This tool works by running the container on a system inside of your network. While running, it will automatically update the external DNS for a specified domain root. to point to your LAN's public IP.
+Uses the Cloudflare API to automatically update a DNS record for a given domain. This tool works by running the container on a system inside of your network. While running, it will periodically check and update the CloudFlare DNS for a specified record.
 
 Requires a CloudFlare account to work.
 
