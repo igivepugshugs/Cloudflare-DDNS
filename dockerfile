@@ -8,4 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+COPY .env .
+
 CMD ["python", "app.py"]
