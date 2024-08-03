@@ -1,6 +1,5 @@
-# LAN DDNS Server
-Uses a Cloudflare API to automatically update the IP address of a DNS record
-for a given domain.
+# DDNS Server
+Uses a Cloudflare API to automatically update a DNS record for a given domain.
 
 ## How it works
 1. Check LAN public IP every 5 minutes
@@ -11,7 +10,8 @@ for a given domain.
 	- create new record
 
 ## Get started
-Ill create a better way to start this, but for now just run the following:
+I'll create a better way to start this, but for now just run the following:
 
 docker build -t ddns .
+
 docker run -d --name ddns -p 8080:80 ddns:latest
